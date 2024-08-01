@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
 function TaskInput({ onAddTask }) {
-  const [taskInput, setTaskInput] = useState("");
+  let taskInput = "";
 
   const handleInputChange = (e) => {
     taskInput = e.target.value;
@@ -10,7 +10,7 @@ function TaskInput({ onAddTask }) {
   const handleAddTask = () => {
     if (taskInput.trim() !== "") {
       onAddTask(taskInput);
-      setTaskInput(""); // Clear the input
+      taskInput = ""; // Clear the input
     }
   };
 
